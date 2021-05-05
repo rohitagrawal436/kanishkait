@@ -970,7 +970,7 @@ app.get('/logout', (req, res) => {
     res.redirect('/home');
 })
 
-const host = '0.0.0.0';
+const host = '127.0.0.1';
 const port = process.env.PORT || 3000;
 app.listen(port, host, function() {
     console.log("Server started.......");
