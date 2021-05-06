@@ -15,29 +15,18 @@ app.use(bp.json());
 app.get("/download",function(req,res){
     res.download(__dirname+"/rohit.pdf")
 })
-var x=null;
+var x;
 app.get("/login",function(req,res){
-    if(x==null){
-    res.sendFile(path.join(__dirname,"pages","loginn.html"))}
-    else{
-        res.redirect("/hom")
-    }
-});
+        res.sendFile(path.join(__dirname,"pages","loginn.html"))
+  });
+
+app.get("/signup",function(req,res){
+        res.sendFile(path.join(__dirname,"pages","signup.html"))
+    })
 
 app.get("/",function(req,res){
-    if(x==null){
-    res.sendFile(path.join(__dirname,"pages","signup.html"))}
-    else{
-        res.redirect("/hom")
-    }
-})
-
-app.get("/home",function(req,res){
-    if(x==null){
-    res.sendFile(path.join(__dirname,"pages","index.html"))
-    }else{
-        res.redirect("/hom")
-    }
+      res.sendFile(path.join(__dirname,"pages","index.html"))
+    
 })
 
 app.get("/l",function(req,res){
@@ -81,7 +70,7 @@ var con=mysql.createConnection({
 
     var z1,random;
     app.post("/cd",function(req,res){
-       if(x==null){
+       
             let x,y,w,p,q,o;
             x=req.body.a;
             y=req.body.b;
@@ -121,11 +110,8 @@ var con=mysql.createConnection({
                 });           
              }
            })
-        }  
-         else{
-             res.redirect("/hom")
-         }       // console.log("connect");        
-    });
+        
+         });
    
     
     var ott;
@@ -820,13 +806,10 @@ app.get("/checkb",function(req,res){
         });
 
         app.get("/hom",function(req,res){
-            if(x!=null){
+            
             res.render("index1",{email:x});
-            }
-            else{
-                res.redirect("/home")
-            }
-        })
+            
+            })
         
         
        
@@ -966,8 +949,7 @@ app.get("/k7",function(req,res){
 app.get('/logout', (req, res) => {
     req.session = null;
     req.logout();
-    x=null;
-    res.redirect('/home');
+    res.redirect('/');
 })
 
 const host = '0.0.0.0';
