@@ -93,13 +93,13 @@ var con=mysql.createConnection({
                     var transporter = nodemailer.createTransport({
                         service: 'gmail',
                         auth: {
-                          user: 'ra279407@gmail.com',
-                          pass: 'RAgoyal#5762'
+                          user: '',
+                          pass: ''
                         }
                       });
                        random = Math.floor(Math.random()*100000)+1;
                       var mailOptions = {
-                        from: 'ra279407@gmail.com',
+                        from: '',
                         to: z1,
                         subject: 'Email Varification OTP',
                         text:  'thank you ' + x + y + ' for visiting my website your one time password(OTP) is '+random
@@ -881,13 +881,13 @@ app.get("/k7",function(req,res){
                         var transporter = nodemailer.createTransport({
                             service: 'gmail',
                             auth: {
-                              user: 'ra279407@gmail.com',
-                              pass: 'RAgoyal#5762'
+                              user: '',
+                              pass: ''
                             }
                           });
                            random1 = Math.floor(Math.random()*100000)+1;
                           var mailOptions = {
-                            from: 'ra279407@gmail.com',
+                            from: '',
                             to: l,
                             subject: 'Forget Password OTP',
                             text:  'thank you for visiting my website you want to forget your password your one time password(OTP) is '+random1
